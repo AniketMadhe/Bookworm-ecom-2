@@ -10,7 +10,7 @@ function Books() {
     const fetchBooks = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/books",
+          "https://bookworm-ecom.onrender.com/api/books",
           {
             withCredentials: true,
           }

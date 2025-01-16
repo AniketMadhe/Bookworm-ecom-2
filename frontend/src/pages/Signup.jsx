@@ -16,7 +16,7 @@ function Signup() {
     try {
       console.log(pin);
       const response = await axios.post(
-        "https://bookworm-ecom.onrender.com/signup",
+        "https://bookworm-ecom.onrender.com/api/signup",
         {
           username,
           email,

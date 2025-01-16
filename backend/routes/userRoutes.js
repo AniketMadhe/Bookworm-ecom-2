@@ -63,8 +63,8 @@ router.post("/login", async (req, res) => {
     if (!token) return res.status(500).json("failed to generate token");
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "lax",
+      secure: false,
+      sameSite: "none",
     });
     res.status(200).json(user);
   } catch (e) {
