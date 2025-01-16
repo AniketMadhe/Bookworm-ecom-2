@@ -12,9 +12,12 @@ function Welcome() {
   useEffect(() => {
     const validateToken = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/welcome", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://bookworm-ecom.onrender.com/api/welcome",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (response.data.email) {
           setIsLogin(true);
@@ -39,9 +42,12 @@ function Welcome() {
   useEffect(() => {
     const fetchingBookImages = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/getBooks", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://bookworm-ecom.onrender.com/api/getBooks",
+          {
+            withCredentials: true,
+          }
+        );
 
         setBookImages(response.data.slice(0, 4));
       } catch (e) {

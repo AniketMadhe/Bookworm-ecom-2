@@ -8,9 +8,12 @@ function HomeBooks() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/getBooks", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://bookworm-ecom.onrender.com/api/getBooks",
+          {
+            withCredentials: true,
+          }
+        );
 
         setBooks(response.data);
       } catch (e) {
@@ -24,9 +27,12 @@ function HomeBooks() {
   useEffect(() => {
     const fetchingCart = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/welcome", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://bookworm-ecom.onrender.com/api/welcome",
+          {
+            withCredentials: true,
+          }
+        );
         if (response) {
           setCart(response.data.cart);
         }
@@ -42,7 +48,7 @@ function HomeBooks() {
   const addBook = async (bookId) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/addToCart",
+        "https://bookworm-ecom.onrender.com/api/addToCart",
         {
           bookId,
         },
@@ -56,7 +62,7 @@ function HomeBooks() {
   const removeBook = async (bookId) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/cartBookRemove",
+        "https://bookworm-ecom.onrender.com/api/cartBookRemove",
         {
           bookId,
         },

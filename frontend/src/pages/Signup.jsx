@@ -15,13 +15,16 @@ function Signup() {
     e.preventDefault();
     try {
       console.log(pin);
-      const response = await axios.post("http://localhost:5000/api/signup", {
-        username,
-        email,
-        password,
-        address,
-        pin,
-      });
+      const response = await axios.post(
+        "https://bookworm-ecom.onrender.com/signup",
+        {
+          username,
+          email,
+          password,
+          address,
+          pin,
+        }
+      );
       alert("User Registered Successfully!");
       navigate("/login");
     } catch (e) {

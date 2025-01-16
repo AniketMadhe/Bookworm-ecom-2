@@ -9,9 +9,12 @@ function Books() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/books", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://bookworm-ecom.onrender.com/books",
+          {
+            withCredentials: true,
+          }
+        );
         setBooks(response.data.slice(0, 5));
       } catch (e) {
         console.log(e);

@@ -15,9 +15,12 @@ function Login() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:5000/api/logout", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://bookworm-ecom.onrender.com/api/logout",
+        {
+          withCredentials: true,
+        }
+      );
       alert("Logged out");
     } catch (e) {
       console.log(e);
@@ -28,7 +31,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        "https://bookworm-ecom.onrender.com/api/login",
         { username, password },
         { withCredentials: true }
       );
