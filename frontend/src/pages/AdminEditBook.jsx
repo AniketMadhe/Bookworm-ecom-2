@@ -25,7 +25,7 @@ function AdminEditBook() {
     const fetchBook = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/getBook/${id}`,
+          `https://bookworm-ecom-app-1.onrender.com/api/getBook/${id}`,
           { withCredentials: true }
         );
 
@@ -48,7 +48,7 @@ function AdminEditBook() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/adminUpdateBook/${id}`,
+        `https://bookworm-ecom-app-1.onrender.com/api/adminUpdateBook/${id}`,
         { title, author, price, description, imageUrl },
         { withCredentials: true }
       );
@@ -64,7 +64,7 @@ function AdminEditBook() {
 
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/adminDeleteBook/${bookId}`,
+        `https://bookworm-ecom-app-1.onrender.com/api/adminDeleteBook/${bookId}`,
         {
           withCredentials: true,
         }
