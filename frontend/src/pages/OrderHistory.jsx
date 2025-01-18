@@ -10,7 +10,7 @@ function OrderHistory() {
     const fetchOrderHistory = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/orderHistory",
+          "https://bookworm-ecom-app-1.onrender.com/api/orderHistory",
           { withCredentials: true }
         );
 

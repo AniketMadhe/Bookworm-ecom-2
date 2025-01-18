@@ -16,7 +16,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        "https://bookworm-ecom.onrender.com/api/logout",
+        "https://bookworm-ecom-app-1.onrender.com/api/logout",
         {
           withCredentials: true,
         }
@@ -31,7 +31,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://bookworm-ecom.onrender.com/api/login",
+        "https://bookworm-ecom-app-1.onrender.com/api/login",
         { username, password },
         { withCredentials: true }
       );

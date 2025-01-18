@@ -10,9 +10,12 @@ function Navbar() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:5000/api/logout", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://bookworm-ecom-app-1.onrender.com/api/logout",
+        {
+          withCredentials: true,
+        }
+      );
       setIsLogin(false);
       setIsAdmin(false);
       navigate("/login");

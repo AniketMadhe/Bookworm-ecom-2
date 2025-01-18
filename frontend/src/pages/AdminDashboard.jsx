@@ -8,9 +8,12 @@ function AdminDashboard() {
   useEffect(() => {
     const fetchAllBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/getBooks", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://bookworm-ecom-app-1.onrender.com/api/getBooks",
+          {
+            withCredentials: true,
+          }
+        );
         setBooks(response.data);
       } catch (e) {
         console.log(e);

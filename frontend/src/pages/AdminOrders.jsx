@@ -8,7 +8,7 @@ function AdminOrders() {
     const fetchingAllOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/getAllOrders",
+          "https://bookworm-ecom-app-1.onrender.com/api/getAllOrders",
           { withCredentials: true }
         );
         setOrders(response.data);
@@ -22,7 +22,7 @@ function AdminOrders() {
   const handleOrderStatus = async (id, statusValue) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/handleOrderStatus/${id}`,
+        `https://bookworm-ecom-app-1.onrender.com/api/handleOrderStatus/${id}`,
         { statusValue },
         { withCredentials: true }
       );

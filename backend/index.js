@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://bookworm-ecom-1.onrender.com",
+    origin: "https://bookworm-ecom-app.onrender.com",
     credentials: true,
   })
 );

@@ -12,7 +12,7 @@ function AdminAddBook() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/addBook",
+        "https://bookworm-ecom-app-1.onrender.com/api/addBook",
         { title, author, price, description, imageUrl },
         { withCredentials: true }
       );

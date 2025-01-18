@@ -15,7 +15,7 @@ function Cart() {
     const fetchingCartBooks = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/getCartBooks",
+          "https://bookworm-ecom-app-1.onrender.com/api/getCartBooks",
           { withCredentials: true }
         );
 
@@ -39,7 +39,7 @@ function Cart() {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/welcome",
+          "https://bookworm-ecom-app-1.onrender.com/api/welcome",
           {
             withCredentials: true,
           }
@@ -56,7 +56,7 @@ function Cart() {
   const handleRemove = async (bookId) => {
     try {
       const response = await axios.post(
-        "https://bookworm-ecom.onrender.com/api/cartBookRemove",
+        "https://bookworm-ecom-app-1.onrender.com/api/cartBookRemove",
         { bookId },
         { withCredentials: true }
       );
@@ -71,7 +71,7 @@ function Cart() {
   const handleOrder = async (e) => {
     try {
       const response = await axios.post(
-        "https://bookworm-ecom.onrender.com/api/handleOrder",
+        "https://bookworm-ecom-app-1.onrender.com/api/handleOrder",
         { cartBooks, userAddress },
         { withCredentials: true }
       );
@@ -88,7 +88,7 @@ function Cart() {
     try {
       console.log("Iaddnfndndfnfdnsfn");
       const response = await axios.put(
-        `https://bookworm-ecom.onrender.com/api/updateUserAddress/${userID}`,
+        `https://bookworm-ecom-app-1.onrender.com/api/updateUserAddress/${userID}`,
         { userAddress },
         { withCredentials: true }
       );

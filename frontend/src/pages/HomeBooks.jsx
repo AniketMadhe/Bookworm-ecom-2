@@ -9,7 +9,7 @@ function HomeBooks() {
     const fetchBooks = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/getBooks",
+          "https://bookworm-ecom-app-1.onrender.com/api/getBooks",
           {
             withCredentials: true,
           }
@@ -28,7 +28,7 @@ function HomeBooks() {
     const fetchingCart = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/welcome",
+          "https://bookworm-ecom-app-1.onrender.com/api/welcome",
           {
             withCredentials: true,
           }
@@ -48,7 +48,7 @@ function HomeBooks() {
   const addBook = async (bookId) => {
     try {
       const response = await axios.post(
-        "https://bookworm-ecom.onrender.com/api/addToCart",
+        "https://bookworm-ecom-app-1.onrender.com/api/addToCart",
         {
           bookId,
         },
@@ -62,7 +62,7 @@ function HomeBooks() {
   const removeBook = async (bookId) => {
     try {
       const response = await axios.post(
-        "https://bookworm-ecom.onrender.com/api/cartBookRemove",
+        "https://bookworm-ecom-app-1.onrender.com/api/cartBookRemove",
         {
           bookId,
         },

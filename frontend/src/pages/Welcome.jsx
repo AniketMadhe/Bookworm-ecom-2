@@ -13,7 +13,7 @@ function Welcome() {
     const validateToken = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/welcome",
+          "https://bookworm-ecom-app-1.onrender.com/api/welcome",
           {
             withCredentials: true,
           }
@@ -43,7 +43,7 @@ function Welcome() {
     const fetchingBookImages = async () => {
       try {
         const response = await axios.get(
-          "https://bookworm-ecom.onrender.com/api/getBooks",
+          "https://bookworm-ecom-app-1.onrender.com/api/getBooks",
           {
             withCredentials: true,
           }
