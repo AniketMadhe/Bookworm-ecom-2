@@ -79,7 +79,7 @@ function HomeBooks() {
       <ul className="main w-[98%] h-[94%] m-6 flex justify-center gap-6 flex-wrap ">
         {books.map((book, i) => (
           <li key={i} className="w-[210px] h-[320px] border-red-700 m-[10px] ">
-            <div className="w-full h-full border border-gray-400 shadow-[8px_8px_20px_rgba(0,0,0,3)] flex flex-col gap-3 ">
+            <div className="w-full h-full border border-gray-400 shadow-[8px_8px_20px_rgba(0,0,0,3)] flex flex-col my-[3px] ">
               <img
                 src={book.imageUrl}
                 alt="book image"
