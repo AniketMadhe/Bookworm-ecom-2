@@ -86,7 +86,7 @@ function HomeBooks() {
                 className="w-full h-[80%] object-cover "
               />
               <div className="w-full h-[20%] border  ">
-                <h3 className="text-center font-semibold text-[14px] mt-2">
+                <h3 className="text-center font-semibold text-[14px]">
                   {book.title}
                 </h3>
 
@@ -109,7 +109,7 @@ function HomeBooks() {
                     onClick={() => {
                       addBook(book._id);
                     }}
-                    className={`border border-gray-500 mt-2 px-7 ${
+                    className={`border border-gray-500 px-7 ${
                       !isInCart(book._id)
                         ? " bg-blue-950 hover:bg-blue-900 text-white"
                         : "bg-gray-300 text-black text-opacity-50"
