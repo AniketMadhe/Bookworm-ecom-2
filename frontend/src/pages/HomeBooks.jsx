@@ -79,14 +79,14 @@ function HomeBooks() {
       <ul className="main w-[98%] h-[94%] m-6 flex justify-center gap-6 flex-wrap ">
         {books.map((book, i) => (
           <li key={i} className="w-[210px] h-[320px] border-red-700 m-[10px] ">
-            <div className="w-full h-full border border-gray-400 shadow-[8px_8px_20px_rgba(0,0,0,3)] flex flex-col my-[3px] ">
+            <div className="w-full h-full border border-gray-400 shadow-[8px_8px_20px_rgba(0,0,0,3)] flex flex-col  ">
               <img
                 src={book.imageUrl}
                 alt="book image"
                 className="w-full h-[80%] object-cover "
               />
               <div className="w-full h-[20%] border  ">
-                <h3 className="text-center font-semibold text-[14px]">
+                <h3 className="text-center font-semibold text-[14px] mt-2">
                   {book.title}
                 </h3>
 
@@ -109,7 +109,7 @@ function HomeBooks() {
                     onClick={() => {
                       addBook(book._id);
                     }}
-                    className={`border border-gray-500 px-7 ${
+                    className={`border border-gray-500 mt-2 px-7 ${
                       !isInCart(book._id)
                         ? " bg-blue-950 hover:bg-blue-900 text-white"
                         : "bg-gray-300 text-black text-opacity-50"
