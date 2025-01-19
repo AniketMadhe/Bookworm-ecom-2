@@ -86,7 +86,7 @@ function HomeBooks() {
                 className="w-full h-[80%] object-cover "
               />
               <div className="w-full h-[20%] border  ">
-                <h3 className="text-center font-semibold text-[14px]">
+                <h3 className="text-center font-semibold text-[14px] my-3">
                   {book.title}
                 </h3>
 
