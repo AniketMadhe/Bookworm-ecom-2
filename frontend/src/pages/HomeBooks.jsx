@@ -89,9 +89,7 @@ function HomeBooks() {
                 <h3 className="text-center font-semibold text-[14px]">
                   {book.title}
                 </h3>
-                <p className="text-center text-[12px] font-semibold text-gray-900">
-                  {book.author}
-                </p>
+
                 <div className="buttonDiv border bg-white flex justify-around ">
                   <button
                     disabled={!isInCart(book._id)}

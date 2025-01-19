@@ -43,7 +43,7 @@ function AdminDashboard() {
               alt="image"
             />
 
-            <h4 className="w-full h-[20%] border bg-white flex justify-center items-center ">
+            <h4 className="w-full h-[20%] text-[13px] font-semibold border bg-white flex justify-center items-center ">
               {book.title}
             </h4>
           </li>
