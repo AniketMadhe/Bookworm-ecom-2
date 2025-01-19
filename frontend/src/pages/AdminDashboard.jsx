@@ -34,7 +34,7 @@ function AdminDashboard() {
             onClick={() => {
               handleBookClick(book._id);
             }}
-            className="w-48 h-64 mx-2 my-2 border border-gray-500 cursor-pointer rounded-sm shadow-[4px_4px_10px_rgba(0,0,0,3)]"
+            className="w-48 h-72 mx-2 my-2 border border-gray-500 cursor-pointer rounded-sm shadow-[4px_4px_10px_rgba(0,0,0,3)]"
             key={book._id}
           >
             <img
