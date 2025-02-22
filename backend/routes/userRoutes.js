@@ -131,7 +131,6 @@ router.post("/addToCart", authenticate, async (req, res) => {
       { new: true }
     );
     if (updatedUser) {
-      console.log(updatedUser);
       return res.status(200).json("Book added to cart successfully");
     }
 
@@ -206,7 +205,7 @@ router.get("/orderHistory", authenticate, async (req, res) => {
 router.put("/updateUserAddress/:id", authenticate, async (req, res) => {
   const { id } = req.params;
   const { userAddress } = req.body;
-  console.log(userAddress);
+
   try {
     const user = await User.findByIdAndUpdate(
       id,

@@ -1,6 +1,7 @@
 import { React, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import BACKEND_URL from "../config/config_Url";
 import { LoginContext } from "../App";
 
 function Login() {
@@ -15,12 +16,9 @@ function Login() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(
-        "https://bookworm-ecom-app-1.onrender.com/api/logout",
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`${BACKEND_URL}/api/logout`, {
+        withCredentials: true,
+      });
       alert("Logged out");
     } catch (e) {
       console.log(e);
@@ -31,7 +29,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://bookworm-ecom-app-1.onrender.com/api/login",
+        `${BACKEND_URL}/api/login`,
         { username, password },
         { withCredentials: true }
       );
@@ -49,15 +47,19 @@ function Login() {
     }
   };
   return (
-    <div className="w-full h-screen  flex justify-center   items-center ">
+    <div className="w-screen h-screen  flex justify-center md:mt-[-40px]  items-center mt-[-15%] ">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-1/6 h-3/6 justify-center bg-gray-300 items-center gap-[5px] border border-gray-500 "
+        className="flex flex-col w-[80%] h-[60%] md:w-1/5 md:h-3/6 justify-center  bg-gray-300 items-center gap-[10px] md:gap-[5px] border border-gray-500 "
       >
-        <h1 className="font-semibold mb-4">Login</h1>
-        <label htmlFor="username">Username</label>
+        <h1 className="sm:font-semibold font-bold text-2xl md:text-xl mb-4">
+          Login
+        </h1>
+        <label htmlFor="username" className="text-xl md:text-base">
+          Username
+        </label>
         <input
-          className="border  border-gray-400"
+          className="border w-[90%]  text-xl md:text-base  border-gray-400"
           id="username"
           type="text"
           placeholder="Enter username"
@@ -67,9 +69,11 @@ function Login() {
           }}
           required
         />
-        <label htmlFor="password">password</label>
+        <label htmlFor="password" className="text-xl md:text-base">
+          password
+        </label>
         <input
-          className="border border-gray-400"
+          className="border w-[90%] text-xl md:text-base border-gray-400"
           id="password"
           type="password"
           placeholder="Enter password"
@@ -79,13 +83,16 @@ function Login() {
           }}
           required
         />
-        <button className=" px-[8px] mt-[18px] bg-blue-900 hover:bg-blue-950  text-white rounded-sm">
+        <button className=" md:px-[8px] md:mt-[18px] px-[13px] text-[20px] md:text-[16px] mt-[25px] bg-blue-900 hover:bg-blue-950  text-white rounded-sm">
           Submit
         </button>
-        <p className="text-[11px] mt-4">
+        <p className="text-[13px] md:text-[11px] mt-4">
           Don't have an account ?{"  "}
           <span>
-            <a className="text-blue-600 text-[12px]" href="/signup">
+            <a
+              className="text-blue-600 text-[15px] md:text-[12px] "
+              href="/signup"
+            >
               Signup
             </a>
           </span>

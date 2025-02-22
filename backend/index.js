@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://bookworm-ecom-app.onrender.com",
-    credentials: true,
+    origin: "http://localhost:5173", // React's default port (adjust if needed)
+    credentials: true, // Enable cookies to be sent with requests
   })
 );
 

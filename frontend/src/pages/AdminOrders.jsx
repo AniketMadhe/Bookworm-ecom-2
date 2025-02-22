@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
+import BACKEND_URL from "../config/config_Url";
 
 function AdminOrders() {
   const [orders, setOrders] = useState([]);
@@ -7,10 +8,9 @@ function AdminOrders() {
   useEffect(() => {
     const fetchingAllOrders = async () => {
       try {
-        const response = await axios.get(
-          "https://bookworm-ecom-app-1.onrender.com/api/getAllOrders",
-          { withCredentials: true }
-        );
+        const response = await axios.get(`${BACKEND_URL}/api/getAllOrders`, {
+          withCredentials: true,
+        });
         setOrders(response.data);
       } catch (e) {
         console.log(e);
@@ -22,7 +22,7 @@ function AdminOrders() {
   const handleOrderStatus = async (id, statusValue) => {
     try {
       const response = await axios.put(
-        `https://bookworm-ecom-app-1.onrender.com/api/handleOrderStatus/${id}`,
+        `${BACKEND_URL}/api/handleOrderStatus/${id}`,
         { statusValue },
         { withCredentials: true }
       );
@@ -34,12 +34,14 @@ function AdminOrders() {
   };
 
   return (
-    <div className="w-full h-screen ">
-      <h2 className="text-black text-center my-3 font-bold">All Orders</h2>
-      <ul className="flex flex-col gap-8 ">
+    <div className="md:w-full md:h-screen ">
+      <h2 className="text-black md:text-center text-center mt-2 md:my-3 font-bold">
+        All Orders
+      </h2>
+      <ul className="md:flex md:flex-col flex flex-col gap-2 md:gap-4 ">
         {orders.map((order) => (
           <li
-            className="flex justify-around items-center bg-gray-400"
+            className="md:flex md:justify-around md:items-center p-4 my-4 justify-center items-center bg-gray-400"
             key={order._id}
           >
             <h4>Time : {new Date(order.createdAt).toLocaleDateString()}</h4>

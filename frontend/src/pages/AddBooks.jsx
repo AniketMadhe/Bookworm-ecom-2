@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import axios from "axios";
+import BACKEND_URL from "../config/config_Url";
 
 function AddBooks() {
   const [title, setTitle] = useState("");
@@ -13,7 +14,7 @@ function AddBooks() {
     e.preventDefault();
     try {
       await axios.post(
-        "https://bookworm-ecom-app-1.onrender.com/api/addBook",
+        `${BACKEND_URL}/api/addBook`,
         {
           title,
           author,

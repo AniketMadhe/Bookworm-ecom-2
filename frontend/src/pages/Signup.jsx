@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import BACKEND_URL from "../config/config_Url";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -15,16 +16,13 @@ function Signup() {
     e.preventDefault();
     try {
       console.log(pin);
-      const response = await axios.post(
-        "https://bookworm-ecom-app-1.onrender.com/api/signup",
-        {
-          username,
-          email,
-          password,
-          address,
-          pin,
-        }
-      );
+      const response = await axios.post(`${BACKEND_URL}/api/signup`, {
+        username,
+        email,
+        password,
+        address,
+        pin,
+      });
       alert("User Registered Successfully!");
       navigate("/login");
     } catch (e) {
@@ -34,10 +32,10 @@ function Signup() {
   };
 
   return (
-    <div className="w-full h-screen flex   justify-center ">
+    <div className=" w-screen h-screen  md:w-full md:h-screen md:flex flex    justify-center items-center md:mt-0 mt-[-20%] ">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-[20%] h-[65%] mt-16 justify-center gap-[5px] items-center bg-slate-300 border border-slate-600"
+        className="flex flex-col w-2/3 h-[50%] md:w-[20%] md:h-[65%] mt-16 md:mt-[-5%] justify-center gap-[5px] items-center bg-slate-300 border border-slate-600"
       >
         <h1 className="font-bold mb-2">Signup</h1>
         <label htmlFor="username">Username</label>
